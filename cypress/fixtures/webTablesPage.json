@@ -1,0 +1,10 @@
+{
+    "webTableAddButton": "#addNewRecordButton",
+    "registerationAge": "#age",
+    "registerationDepartment": "#department",
+    "registerationEmail": "#userEmail",
+    "registerationFirstName": "#firstName",
+    "registerationLastName": "#lastName",
+    "registerationSalary": "#salary",
+    "registerationSubmit":"#submit"
+}
