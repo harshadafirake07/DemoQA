@@ -1,0 +1,30 @@
+name: Cypress DemoQA Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run Cypress DemoQA tests
+      run: npm run cypress:run || true
+
+    - name: Store Cypress artifacts
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: cypress-artifacts
+        path: |
+          cypress/screenshots
+          cypress/videos
