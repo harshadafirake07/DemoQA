@@ -1,7 +1,8 @@
 import homePage from "../../cypress/fixtures/homePage.json";
+import elementsPage from "../../cypress/fixtures/elementsPage.json";
 
 const {homeUrl, homePageElements} = homePage;
-const {elementsWebTable}=elementsPage;
+const {elementsWebTable} = elementsPage;
 
 export function url(){
     cy.visit(homeUrl);
