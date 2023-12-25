@@ -1,4 +1,4 @@
-import { element, WebTables, url } from '../../cypress/utilities/homepage.js';
+import { WebTables, element, url } from '../../cypress/utilities/homepage.js';
 import { addWebTableEntry } from '../../cypress/utilities/webtable.js';
 
 describe('Demo QA test suite', () => {

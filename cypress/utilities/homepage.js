@@ -1,4 +1,3 @@
-import elements from "../../cypress/fixtures/elementsPage.json";
 import homePage from "../../cypress/fixtures/homePage.json";
 
 const {homeUrl, homePageElements} = homePage;
