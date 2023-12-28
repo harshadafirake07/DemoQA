@@ -6,5 +6,8 @@
     "registerationFirstName": "#firstName",
     "registerationLastName": "#lastName",
     "registerationSalary": "#salary",
-    "registerationSubmit":"#submit"
+    "registerationSubmit":"#submit",
+    "webtableIsPresent":".rt-table",
+    "webtableRow":".rt-tbody .rt-tr-group",
+    "webtableRowCell":".rt-td"
 }

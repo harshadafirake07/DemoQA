@@ -1,11 +1,11 @@
-import homePage from "../../cypress/fixtures/homePage.json";
-import elementsPage from "../../cypress/fixtures/elementsPage.json";
+import elementsPage from '../../cypress/fixtures/elementsPage.json';
+import homePage from '../../cypress/fixtures/homePage.json';
 
-const {homeUrl, homePageElements} = homePage;
+const {homePageElements} = homePage;
 const {elementsWebTable} = elementsPage;
 
 export function url(){
-    cy.visit(homeUrl);
+    cy.visit(Cypress.env('url'));
 }
 
 export function element(){
