@@ -1,5 +1,5 @@
 import { WebTables, element, url } from '../../cypress/utilities/homepage.js';
-import { addWebTableEntry } from '../../cypress/utilities/webtable.js';
+import { addWebTableEntry, readtable } from '../../cypress/utilities/webtable.js';
 
 describe('Demo QA test suite', () => {
 
@@ -10,5 +10,7 @@ describe('Demo QA test suite', () => {
     cy.wait(8000);
     WebTables();
     addWebTableEntry();
+    cy.wait(5000);
+    readtable();
   })
 })

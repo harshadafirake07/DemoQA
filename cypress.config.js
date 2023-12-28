@@ -1,16 +1,17 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: "njhk46",
+  env:{
+    url : "https://demoqa.com/"
+  },
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
     specPattern: "cypress/e2e/*.cy.js",
     screenshotsFolder: 'cypress/screenshots',
-    videosFolder: 'cypress/videos',
-    video: true,
-    env: {
-      chromeWebSecurity: false
-    }
+    videosFolder: 'cypress/video',
+    video: true
   },
 });
