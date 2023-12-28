@@ -1,35 +1,25 @@
 name: Cypress DemoQA Tests
-
 on:
   workflow_dispatch:
 
 jobs:
-  build:
+  cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1]
+
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run Cypress DemoQA tests
 
-    - name: Create Cypress Artifacts Directories
-      run: |
-          mkdir -p cypress/screenshots
-          mkdir -p cypress/videos
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run Cypress DemoQA tests
-      run: npm run cypress:run || true
-
-    - name: Store Cypress artifacts
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: cypress-artifacts
-        path: |
-          cypress/screenshots
-          cypress/videos
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+          parallel: true
