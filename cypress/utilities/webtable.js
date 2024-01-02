@@ -29,13 +29,13 @@ export function addWebTableEntry() {
 }
 
 export function readtable() {
+    const rowdata=[];
     cy.get(webtableIsPresent).should("be.visible");
     cy.get(webtableRow).should("have.length.gt", 0).as("tableRows");
     cy.get("@tableRows")
-        .filter(`:has(${webtableRowCell}:not(:contains("&nbsp;")))`)
         .each(($row, index) => {
             cy.wrap($row)
-                .find(".rt-td")
+                .find(webtableRowCell)
                 .invoke("text")
                 .then((rowdata) => {
                     cy.log(`row ${index + 1} : ${rowdata}`);
