@@ -9,11 +9,11 @@ export function url(){
 }
 
 export function element(){
-    cy.get(homePageElements).first().should('have.text','Elements').click();
+    cy.get(homePageElements).first().should('have.text','Elements').should('be.visible').click();
 }
 
 export function WebTables(){
-    cy.get(elementsWebTable).first().should('have.text','Web Tables').click();
+    cy.get(elementsWebTable).first().should('have.text','Web Tables').should('be.visible').click();
 }
 
 

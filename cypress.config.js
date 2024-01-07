@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   projectId: "njhk46",
+  reporter: 'mochawesome',
   env:{
     url : "https://demoqa.com/"
   },

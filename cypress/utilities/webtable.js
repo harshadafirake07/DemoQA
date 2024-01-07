@@ -29,9 +29,10 @@ export function addWebTableEntry() {
 }
 
 export function readtable() {
-    const rowdata=[];
+    //const rowdata=[];
     cy.get(webtableIsPresent).should("be.visible");
     cy.get(webtableRow).should("have.length.gt", 0).as("tableRows");
+
     cy.get("@tableRows")
         .each(($row, index) => {
             cy.wrap($row)
@@ -42,3 +43,18 @@ export function readtable() {
                 });
         });
 }
+
+
+export function form(){
+    cy.get('#firstName').type('John');
+    cy.get('#lastName').type('Doe');
+    cy.get('#userEmail').type('john.doe@example.com');
+    cy.get('[name="gender"]').check('Male');
+    cy.get('#userNumber').type('1234567890');
+    cy.get('#dateOfBirthInput').type('1990-01-01');
+    cy.get('.subjects-auto-complete__value-container').type('Math').type('{enter}');
+    cy.get('[for="hobbies-checkbox-1"]').click();
+    cy.get('#currentAddress').type('123 Main Street, Cityville');
+    cy.get('#submit').click();
+    cy.get('.modal-title').should('contain', 'Thanks for submitting the form');
+  };
