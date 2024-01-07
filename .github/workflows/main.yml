@@ -25,3 +25,11 @@ jobs:
           record: true
           parallel: true
           reporter: ${{ env.CYPRESS_REPORTER }}
+          
+      - name: Upload Mochawesome Reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: mochawesome-reports
+          path: |
+            /home/runner/work/DemoQA/DemoQA/mochawesome-report/mochawesome.json
+            /home/runner/work/DemoQA/DemoQA/mochawesome-report/mochawesome.html
