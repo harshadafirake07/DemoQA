@@ -8,6 +8,6 @@
     "registerationSalary": "#salary",
     "registerationSubmit":"#submit",
     "webtableIsPresent":".rt-table",
-    "webtableRow":".rt-tbody .rt-tr-group",
+    "webtableRow":".rt-tr-group",
     "webtableRowCell":".rt-td"
 }
